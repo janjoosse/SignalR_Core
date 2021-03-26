@@ -27,7 +27,7 @@ class SignalrConnectionService {
     }
   }
 
-  Future<void> closeConnection() async {
+  Future<void> stopConnection() async {
     if (_connection.state == HubConnectionState.connected) {
       _connection.off('ReceiveMessage');
       _connection.stop();
